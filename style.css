@@ -1,0 +1,12 @@
+#app{
+    text-align: center;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+h1{
+    font-size: 3.5em;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
