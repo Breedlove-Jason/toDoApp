@@ -1,12 +1,17 @@
-#app{
+.h1{
     text-align: center;
-    margin: 0 auto;
-    height: 100%;
-    width: 100%;
+    border-top: 1px solid red;
 }
-h1{
-    font-size: 3.5em;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+
+#toDo {
+    font-family: Arial;
+}
+
+#toDo .done {
+    color:red;
+    text-decoration:line-through;
+}
+
+#toDo .undone {
+    cursor: pointer;
 }

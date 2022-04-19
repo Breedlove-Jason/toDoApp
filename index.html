@@ -5,22 +5,17 @@
     <title>ToDo App</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="undoneItems()">
 
-<h1>ToDo App</h1>
+<h1 id = "header">ToDo App</h1>
 <br>
 <hr/>
 <br>
-<table>
-    <tr>
-        <td><label>Add Item<input type="text" id="input" placeholder="Add a task..."/></label></td>
-    </tr>
-    <tr>
-        <td><button type='button' id="add" onclick="addItem();">Add</button></td>
-    </tr>
-    <tr><td id = 'list' ></td></tr>
-<!--    <tr><td><button type="button" id="remove" onclick="removeItem();"></button></td></tr>-->
-</table>
+    <label><input type="text" id="new-todo" placeholder="Add new todo"/></label>
+    <button id="add-todo" onclick="addItem()">Add</button>
+    <ol id="toDo">
+
+    </ol>
 <script src="script.js"></script>
 </body>
 </html>
