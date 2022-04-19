@@ -10,6 +10,7 @@ function addItem() {
     input.value = "";
     document.getElementById('toDo').appendChild(item);
     item.addEventListener('click', deleteItem);
+    // let elem = document.getElementById('toDo').removeChild(item);
 }
 
 function deleteItem() {
@@ -24,15 +25,11 @@ function undoneItems() {
     }
 }
 
-// document.getElementById('list').innerHTML = items.join('<br>' + '<button class = ".linethrough" onclick="removeItem(this)">X</button>');
-// for(let i = 0; i < items.length; i++){
-// document.getElementById('list').innerHTML += items[i] + '<br>' + '<button onclick="removeItem(' + i + ')">Remove</button>' + '<br>';
-// }
+function clearItems() {
+        let removeItem = document.getElementById('li');
+        removeItem.addEventListener('click', removeItem);
+}
 
-// document.createElement('button');
-// document.getElementById('list').innerHTML = items.join('<br>');
-
-//create encapsulated task
-// attach to dom when ready
-// learn more about innerHTML not used often, problems with it
-// javascript object, id, ischecked
+function removeItem() {
+    let elem = document.getElementById('toDo').removeChild(removeItem);
+}
