@@ -3,33 +3,46 @@
 // let items = [];
 
 function addItem() {
-    let item = document.createElement('li');
     let input = document.getElementById('new-todo');
+    let item = document.createElement('li');
     item.innerHTML = input.value;
-    // items.push(input.value);
     input.value = "";
     document.getElementById('toDo').appendChild(item);
     item.addEventListener('click', deleteItem);
-    // let elem = document.getElementById('toDo').removeChild(item);
+    // document.getElementById('btn').removeChild(item);
+    let remove = document.getElementById('btn');
+    remove.addEventListener('click', function () {
+        // console.log(remove, 'button is working');
+        // item.remove();
+        item.parentNode.removeChild(item);
+
+    });
 }
 
 function deleteItem() {
     this.className = 'done';
     this.removeEventListener('click', deleteItem);
 }
-
 function undoneItems() {
     let undone = document.getElementsByClassName('undone');
     for (let i = 0; i < undone.length; i++) {
         undone[i].addEventListener('click', deleteItem);
     }
 }
+// function hideItem() {
+//     this.className = 'hidden';
+//     this.removeEventListener('click', hideItem);
+    // let hide = document.getElementsByClassName('done');
+    // for (let i = 0; i < hide.length; i++) {
+    //     hide[i].addEventListener('click', hideItem);
+    // }
+// }
 
-function clearItems() {
-        let removeItem = document.getElementById('li');
-        removeItem.addEventListener('click', removeItem);
-}
-
-function removeItem() {
-    let elem = document.getElementById('toDo').removeChild(removeItem);
-}
+// function remove() {
+//     let remove = document.getElementById('li');
+//     document.getElementsByClassName('done').appendChild(remove);
+//     remove.addEventListener('button', function(e) {
+//     // let remove = document.getElementById('li').removeChild(item);
+//     // remove.addEventListener('button', function(e) {
+//     });
+// }

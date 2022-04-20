@@ -15,3 +15,7 @@
 #toDo .undone {
     cursor: pointer;
 }
+
+#todo .hidden {
+    display: none;
+}
