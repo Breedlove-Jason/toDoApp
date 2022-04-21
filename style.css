@@ -16,6 +16,31 @@
     cursor: pointer;
 }
 
-#todo .hidden {
-    display: none;
+.todo-item{
+    margin-bottom: 10px;
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 27px;
+    padding-left: 0px;
+}
+
+.deleteButton{
+    background-color: red;
+    color: white;
+    border-color: red;
+    padding: 1px 7px 1px 7px;
+    border-radius: 50%;
+    font-size: .7em
+}
+
+.line{
+    margin-bottom: 10px;
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 27px;
+    text-decoration: line-through;
 }

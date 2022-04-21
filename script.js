@@ -1,48 +1,73 @@
 'use strict';
 
-// let items = [];
+const items = [];
+document.getElementById('form').addEventListener('submit', addItem);
 
-function addItem() {
-    let input = document.getElementById('new-todo');
-    let item = document.createElement('li');
-    item.innerHTML = input.value;
-    input.value = "";
-    document.getElementById('toDo').appendChild(item);
-    item.addEventListener('click', deleteItem);
-    // document.getElementById('btn').removeChild(item);
-    let remove = document.getElementById('btn');
-    remove.addEventListener('click', function () {
-        // console.log(remove, 'button is working');
-        // item.remove();
-        item.parentNode.removeChild(item);
+function addItem(e) {
+    e.preventDefault();
+    const input = document.getElementById('new-todo');
+    const task = {
+        text: input.value,
+        checked: false,
+        id: Date.now()
+    };
 
-    });
-}
+    items.push(task);
+    console.log('items', items);
+    renderRow();
 
-function deleteItem() {
-    this.className = 'done';
-    this.removeEventListener('click', deleteItem);
-}
-function undoneItems() {
-    let undone = document.getElementsByClassName('undone');
-    for (let i = 0; i < undone.length; i++) {
-        undone[i].addEventListener('click', deleteItem);
+    function renderRow() {
+        const list = document.getElementById('toDo');
+
+        list.innerHTML = '';
+
+        for (let i = 0; i < items.length; i++) {
+            const text = items[i].text;
+            const li = document.createElement('LI');
+            li.className = 'todo-item';
+            li.addEventListener('click', function (e) {
+                toggleTask(items[i].id)
+            });
+            li.id = items[i].id;
+            li.textContent = text;
+            if (items[i].checked === true) {
+                li.className = 'line';
+                // li.textDecoration.style('line-through');
+            }
+            list.appendChild(li);
+
+            const span = document.createElement('SPAN');
+            span.className = 'delete-todo';
+
+            li.appendChild(span);
+            const deleteButton = document.createElement('BUTTON');
+            deleteButton.className = 'deleteButton';
+            deleteButton.textContent = 'X';
+            span.appendChild(deleteButton);
+
+            deleteButton.addEventListener('click', function (e) {
+                e.preventDefault();
+                deleteItem(items[i].id);
+            });
+        }
     }
-}
-// function hideItem() {
-//     this.className = 'hidden';
-//     this.removeEventListener('click', hideItem);
-    // let hide = document.getElementsByClassName('done');
-    // for (let i = 0; i < hide.length; i++) {
-    //     hide[i].addEventListener('click', hideItem);
-    // }
-// }
+    function deleteItem(id) {
+        // check to see if checked === true && the id passed in equals the id you want to delete
+        for (let i = 0; i < items.length; i++) {
+            if (items[i].id === id && items[i].checked === true) {
+                items.splice(i, 1);
+            }
+        }
+        renderRow();
+    }
+    function toggleTask(id) {
+        for (let i = 0; i < items.length; i++) {
+            if (items[i].id === id) {
+                items[i].checked = !items[i].checked;
+            }
+        }
+        renderRow();
+    }
 
-// function remove() {
-//     let remove = document.getElementById('li');
-//     document.getElementsByClassName('done').appendChild(remove);
-//     remove.addEventListener('button', function(e) {
-//     // let remove = document.getElementById('li').removeChild(item);
-//     // remove.addEventListener('button', function(e) {
-//     });
-// }
+}
+
