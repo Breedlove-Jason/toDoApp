@@ -31,9 +31,10 @@ function addItem(e) {
             li.id = items[i].id;
             li.textContent = text;
             if (items[i].checked === true) {
-                li.className = 'line';
+                li.style.setProperty("text-decoration", "line-through");
                 // li.textDecoration.style('line-through');
             }
+
             list.appendChild(li);
 
             const span = document.createElement('SPAN');
@@ -55,8 +56,9 @@ function addItem(e) {
         // check to see if checked === true && the id passed in equals the id you want to delete
         for (let i = 0; i < items.length; i++) {
             if (items[i].id === id && items[i].checked === true) {
-                items.splice(i, 1);
-            }
+                // items.splice(i, 1);
+                items.splice(items.indexOf(items[i]), 1);
+                }
         }
         renderRow();
     }
