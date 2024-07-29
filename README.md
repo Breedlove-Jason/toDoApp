@@ -1,17 +1,46 @@
-# ToDo List App
+# ToDo List Manager
 
-<i>Simple ToDo App</i>
+![toDoListManager-preview.png](toDoListManager-preview.png)
+## Description
+The ToDo List Manager is a feature-rich web application designed to help users efficiently manage their tasks. Users can add, edit, and delete tasks, set due dates, assign priority levels, filter tasks by status, and search for tasks. The application uses local storage to persist data across sessions and leverages Bootstrap for a modern and responsive design.
 
-Check it out <a href="https://breedlove-jason.github.io/toDoApp/">here</a>
+## Features
+- Add new tasks.
+- Edit tasks.
+- Set due dates and priority levels.
+- Mark tasks as completed or pending.
+- Delete tasks.
+- Search tasks.
+- Filter tasks by status.
+- Theme toggle (light/dark mode).
+- Persistent data storage using local storage.
 
-## Summary
+## Getting Started
+### Prerequisites
+- Web browser (e.g., Chrome, Firefox)
 
-In 2021, I began my journey to becoming a self-taught software developer.
-This to do list app became the second project in my portfolio.
-I have experience in Java and Python.
-However,
-I decided to change my path to becoming a full stack developer and this was the first time I have ever used javascript.
+### Installation
+1. Clone the repository and change directory:
+   ```sh
+   git clone https://github.com/Breedlove-Jason/toDoApp.git
+   cd toDoApp
+   ```
 
-## Author
+2. Open `index.html` in your web browser.
+   
+## Usage
+   * Enter your task in the input field.
+   * Select a due date and priority level.
+   * Click the "Add" button to add the task to the list.
+   * Click on a task to mark it as completed.
+   * Click the "Edit" button next to a task to edit it.
+   * Click the "X" button next to a task to delete it.
+   * Use the search bar to find specific tasks.
+   * Use the filter buttons to view all, completed, or pending tasks.
+   * Click the "Toggle Theme" button to switch between light and dark modes.
+   
+## License
+   This project is licensed under the MIT License.
 
-- Jason Breedlove - Full-Stack Software Developer - [Website](https://jasonbreedlove.com) | [LinkedIn](https://www.linkedin.com/in/jason-breedlove-b216b6237?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Be8IsoZ3CQGiLt9oZxQtXDw%3D%3D)
+### Acknowledgements:
+Bootstrap

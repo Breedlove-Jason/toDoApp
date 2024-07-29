@@ -1,25 +1,67 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>ToDo App</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List Manager</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="text-center my-4">
+        <h1>ToDo List Manager</h1>
+        <button id="theme-toggle" class="btn btn-secondary">
+          Toggle Theme
+        </button>
+      </header>
 
-<h1 id = "header">ToDo App</h1>
-<br>
-<hr/>
-<br>
-<form id="form">
-<label><input type="text" id="new-todo" placeholder="Add new todo"/></label>
-<button id="button">Add</button>
-</form>
+      <main>
+        <form id="form" class="form-inline justify-content-center mb-4">
+          <input
+            type="text"
+            id="new-todo"
+            class="form-control mr-2"
+            placeholder="Add new todo"
+            required
+          />
+          <input type="date" id="due-date" class="form-control mr-2" />
+          <select id="priority" class="form-control mr-2">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+          <button type="submit" id="add-button" class="btn btn-primary">
+            Add
+          </button>
+        </form>
 
-<ol id="toDo">
+        <input
+          type="text"
+          id="search"
+          class="form-control mb-4"
+          placeholder="Search tasks"
+        />
 
-</ol>
-<script src="script.js"></script>
-</body>
+        <div id="filters" class="btn-group mb-4">
+          <button id="all-tasks" class="btn btn-outline-primary active">
+            All
+          </button>
+          <button id="completed-tasks" class="btn btn-outline-primary">
+            Completed
+          </button>
+          <button id="pending-tasks" class="btn btn-outline-primary">
+            Pending
+          </button>
+        </div>
+
+        <ul id="toDo" class="list-group"></ul>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
