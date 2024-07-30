@@ -1,60 +1,77 @@
-/* Basic Styling */
 body {
-  font-family: sans-serif;
   transition:
     background-color 0.3s,
     color 0.3s;
+  font-family: sans-serif;
 }
+
 header {
-  background: linear-gradient(
-    to right,
-    #007bff,
-    #28a745
-  ); /* Example gradient */
+  background: linear-gradient(to right, #007bff, #28a745);
   color: white;
   padding: 1rem 0;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Todo Item Styling */
 .todo-item {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto auto;
   align-items: center;
   padding: 1rem;
   border-bottom: 1px solid #eee;
   transition: background-color 0.2s;
+  color: inherit; /* Ensure the text color inherits from body */
 }
+
 .todo-item:hover {
   background-color: #f5f5f5;
 }
+
 .todo-item span {
-  margin-right: 1rem; /* Adjust for spacing */
+  margin-right: 1rem;
 }
 
-/* Completed Task Styling */
 .todo-item.completed {
   text-decoration: line-through;
   color: #999;
 }
 
-/* Priority Color Coding */
-.todo-item[data-priority="high"] {
-  border-left: 5px solid #dc3545; /* Red for high priority */
-}
-.todo-item[data-priority="medium"] {
-  border-left: 5px solid #ffc107; /* Yellow for medium priority */
-}
-.todo-item[data-priority="low"] {
-  border-left: 5px solid #28a745; /* Green for low priority */
+.todo-item[data-priority='high'] {
+  border-left: 5px solid #dc3545;
 }
 
-/* Dark Mode */
+.todo-item[data-priority='medium'] {
+  border-left: 5px solid #ffc107;
+}
+
+.todo-item[data-priority='low'] {
+  border-left: 5px solid #28a745;
+}
+
 body.dark-mode {
   background-color: #333;
   color: white;
 }
+
 body.dark-mode header {
   background: linear-gradient(to right, #343a40, #6c757d);
 }
-/* Add more styles for dark mode elements */
+
+body.dark-mode .todo-item {
+  background-color: #444;
+  color: white;
+}
+
+body.dark-mode .todo-item:hover {
+  background-color: #555;
+}
+
+body.dark-mode .btn-outline-primary {
+  color: white;
+  border-color: white;
+}
+
+body.dark-mode .btn-outline-primary.active {
+  background-color: white;
+  color: #333;
+}
